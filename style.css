@@ -1,0 +1,97 @@
+body {
+  margin: 0;
+  background: #fce4ec;
+  font-family: 'Comic Sans MS', cursive;
+  overflow: hidden;
+}
+
+.container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+.box {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 200px;
+  background: #ff80ab;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  text-align: center;
+  padding-top: 80px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.hook {
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  background: #c2185b;
+  padding: 10px;
+  border-radius: 5px;
+  user-select: none;
+}
+
+.balloons {
+  position: absolute;
+  width: 100%;
+  top: 100%;
+  left: 0;
+  display: flex;
+  justify-content: space-around;
+  opacity: 0;
+  transition: all 2s ease-in;
+}
+
+.balloons.active {
+  top: 0;
+  opacity: 1;
+}
+
+.balloons::before,
+.balloons::after {
+  content: "🎈 🎈 🎈 🎈 🎈";
+  font-size: 30px;
+}
+
+.cat {
+  position: absolute;
+  bottom: 0;
+  left: -200px;
+  width: 150px;
+  height: 150px;
+  background-image: url('https://cdn.pixabay.com/photo/2021/03/23/09/31/cat-6116976_1280.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  transition: left 4s ease-in-out;
+  z-index: 1;
+}
+
+.cat.active {
+  left: 30%;
+}
+
+.cake {
+  position: absolute;
+  bottom: -200px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff8e1;
+  border: 3px solid #f06292;
+  padding: 20px;
+  font-size: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  transition: bottom 2s ease;
+  z-index: 1;
+}
+
+.cake.active {
+  bottom: 100px;
+}
